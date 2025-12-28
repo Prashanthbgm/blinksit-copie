@@ -58,5 +58,44 @@ This project replicates the **core workflow of Blinkit** — category-based shop
 ---
 
 ## 📁 Project Structure
-
-### Frontend
+##FRontend 
+src/
+├── components/
+│ ├── Header.jsx
+│ ├── Footer.jsx
+│ ├── ProductCard.jsx
+│ └── SuccessAnimation.jsx
+│
+├── pages/
+│ ├── Home.jsx
+│ ├── Category.jsx
+│ ├── Cart.jsx
+│ ├── Admin.jsx
+│ └── Search.jsx
+│
+├── context/
+│ └── CartContext.jsx
+│
+├── services/
+│ └── api.js
+│
+├── utils/
+│ └── distance.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+##Backend
+blinkit-backend/
+├── server.js
+├── config/
+│ └── db.js
+├── models/
+│ ├── Category.js
+│ ├── Product.js
+│ └── Order.js
+├── routes/
+│ ├── categoryRoutes.js
+│ ├── productRoutes.js
+│ └── orderRoutes.js
+└── .env
