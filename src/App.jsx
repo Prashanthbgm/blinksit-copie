@@ -1,18 +1,23 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
-import "./App.css";
+import Home from "./pages/Home";
+import Category from "./pages/Category";
+import Cart from "./pages/Cart";
+import Admin from "./pages/Admin";
+import Search from "./pages/Search";
 
-const App = () => {
+export default function App() {
   return (
-    <main>
-    
-      <Header /> {/* Top navigation or branding */}
-      <Outlet /> {/* Dynamic page content */}
-      <Footer /> {/* Footer section */}
-    </main>
-  );
-};
+    <BrowserRouter>
+      <Header />
+      <Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/category/:name" element={<Category />} />
+  <Route path="/search/:text" element={<Search />} />
+  <Route path="/cart" element={<Cart />} />
+  <Route path="/admin" element={<Admin />} />
+</Routes>
 
-export default App;
+    </BrowserRouter>
+  );
+}

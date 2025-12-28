@@ -1,40 +1,25 @@
-import React from "react";
-import banner from "../assets/banner.jpg";
-import "./Home.css";
+import { useEffect, useState } from "react";
+import { getCategories } from "../services/api";
+import CategoryCard from "../components/CategoryCard";
 
-const Home = () => {
+export default function Home() {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories().then(setCategories);
+  }, []);
+
   return (
-    <div className="home-container">
-      {/* Banner Section */}
-      <section className="banner-section">
-        <img src={banner} alt="Banner" className="banner-img" />
-        <div className="banner-content">
-          <h1>Welcome to Blinkit </h1>
-          <p>Find the Daily necessary what you want</p>
-          <button className="explore-btn">Explore Now</button>
-        </div>
-      </section>
-        <section className="categories">
-        <div className="category-card">
-          <h2>🛒 Daily Needs</h2>
-          <p>Shop for groceries and everyday essentials.</p>
-          <button>Explore</button>
-        </div>
-        <div className="category-card">
-          <h2>🔌 Electronics</h2>
-          <p>Find the best gadgets and accessories.</p>
-          <button>Explore</button>
-        </div>
-        <div className="category-card">
-          <h2>🖨️ Print Store</h2>
-          <p>Notes, study material & prints at your fingertips.</p>
-          <button>Explore</button>
-        </div>
-      </section>
+    <div className="max-w-7xl mx-auto px-4 py-6">
+      <h2 className="text-xl font-bold mb-4">
+        Shop by Category
+      </h2>
+
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+        {categories.map((cat) => (
+          <CategoryCard key={cat._id} category={cat} />
+        ))}
+      </div>
     </div>
-    
-
   );
-};
-
-export default Home;
+}
