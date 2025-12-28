@@ -1,12 +1,62 @@
-# React + Vite
+# 🛒 Blinkit Clone – Full Stack MERN Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **Blinkit-inspired grocery delivery web application** built using the **MERN stack**.  
+This project replicates the **core workflow of Blinkit** — category-based shopping, real-time cart, distance-based delivery charges, admin management, and checkout flow.
 
-Currently, two official plugins are available:
+> ⚠️ This project is built for **learning, portfolio, and demonstration purposes**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 👤 User Side
+- 🏠 Home page with **categories fetched from backend**
+- 📦 Category-wise product listing
+- 🔍 **Search products** from header (backend-powered)
+- ➕ Add to cart with quantity `+ / -`
+- 📍 **Enable location using GPS**
+- 🚚 Distance-based delivery charge (₹5/km)
+- 📦 Handling charge calculation
+- 💰 Real-time total & grand total calculation
+- ✅ Order placement with success animation
+
+### 🧑‍💼 Admin Panel
+- ➕ Add new categories
+- ➕ Add products
+- 📂 Category dropdown while adding products
+- 🔒 Separate admin section in header
+
+---
+
+## 🧠 Real Blinkit Logic Used
+
+- Cart handled on **frontend (Context API)**  
+- Orders stored in **MongoDB** only after checkout  
+- Location fetched **on user action** (not auto-tracked)
+- Distance calculated using **Haversine Formula**
+- Backend-powered search & filtering
+- Clean separation of **frontend & backend**
+
+---
+
+## 🧰 Tech Stack
+
+### Frontend
+- React (Vite)
+- Tailwind CSS
+- React Router
+- Context API
+- Fetch API
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- REST APIs
+
+---
+
+## 📁 Project Structure
+
+### Frontend
